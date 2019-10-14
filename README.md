@@ -1,1 +1,1 @@
-# web-backend
+# rickymorty-graphql
