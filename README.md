@@ -2,9 +2,9 @@
 
 Ricky & Morty App is a Node.js app for consulting the characters of of the show using the command line.
 
-![GitHub](https://img.shields.io/github/license/JaimeDordio/rickymorty)
-![GitHub Release Date](https://img.shields.io/github/release-date/JaimeDordio/rickymorty)
-![GitHub last commit](https://img.shields.io/github/last-commit/JaimeDordio/rickymorty)
+![GitHub](https://img.shields.io/github/license/lfresnog/rickymorty-graphql)
+![GitHub Release Date](https://img.shields.io/github/release-date/lfresnog/rickymorty-graphql)
+![GitHub last commit](https://img.shields.io/github/last-commit/lfresnog/rickymorty-graphql)
 
 ## 📦 Install
 
