@@ -59,7 +59,7 @@ const runApp = data => {
     },
     planets: (parent,args,ctx,info) => {
       const planets = data.forEach(pla =>{
-            planets.push(pla.location.name)
+            pla.push(pla.location.name)
           })
           console.log(planets);
           return [...new Set(planets)];
