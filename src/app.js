@@ -1,7 +1,5 @@
 import { fetchData } from './fetchdata';
-import fs from 'fs';
 import { GraphQLServer } from 'graphql-yoga'
-import { getArgumentValues } from 'graphql/execution/values';
 
 // rickymorty entry point
 const url = 'https://rickandmortyapi.com/api/character/';
@@ -43,11 +41,10 @@ const runApp = data => {
     characters: (parent,args,ctx,infor) => {
       const page = args.page || 1;
       const pageSize = args.pageSize || 20;
-      let found2 = data.filter(cha => cha.name.includes(args.name || cha.name))
+      let found = data.filter(cha => cha.name.includes(args.name || cha.name))
                    data.filter(cha => cha.status.includes(args.status || cha.status))
                    data.filter(cha => cha.location.name.includes(args.planet || cha.location.name))
-
-      let found = found2.slice((page-1)*pageSize, ((page-1)*pageSize)+(pageSize+1));
+      found = found.slice((page-1)*pageSize, ((page-1)*pageSize)+(pageSize+1));
       return found.map(cha => {
         return{
           id: cha.id, 
@@ -58,13 +55,12 @@ const runApp = data => {
       })
     },
     planets: (parent,args,ctx,info) => {
-      const planets = data.forEach(pla =>{
-            pla.push(pla.location.name)
-          })
-          console.log(planets);
-          return [...new Set(planets)];
+      const planets = [];
+        data.forEach(pla =>{
+          planets.push(pla.location.name)
+        })
+        return [... new Set(planets)];
     }
-   
   },
 }
   const server = new GraphQLServer({typeDefs,resolvers});
