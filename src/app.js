@@ -29,12 +29,12 @@ const runApp = data => {
   Query:{
     character: (parent,args,ctx,infor) => {
       if(args.id){
-        let found1 = data.find(cha => cha.id === args.id);
+        let found = data.find(cha => cha.id === args.id);
       return{
-        id: found1.id, 
-        name: found1.name, 
-        status: found1.status, 
-        planet:found1.location.name
+        id: found.id, 
+        name: found.name, 
+        status: found.status, 
+        planet:found.location.name
       }
       }
     },
